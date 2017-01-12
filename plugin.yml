@@ -1,0 +1,7 @@
+main: net.lostplay.upnp
+version: 1.0
+name: UpnpEnabler
+
+commands:
+  reload:
+   description: reload plugin

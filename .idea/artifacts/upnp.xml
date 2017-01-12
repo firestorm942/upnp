@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="upnp">
+    <output-path>$PROJECT_DIR$/out/artifacts/upnp</output-path>
+    <root id="archive" name="upnp.jar">
+      <element id="module-output" name="upnp" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+    </root>
+  </artifact>
+</component>
