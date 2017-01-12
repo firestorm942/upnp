@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="apidocs">
+    <CLASSES />
+    <JAVADOC>
+      <root url="file://$USER_HOME$/Desktop/Newfolder/core/apidocs" />
+      <root url="file://$USER_HOME$/Desktop/Newfolder/support/apidocs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$USER_HOME$/Desktop/Newfolder/core/src/main/java" />
+      <root url="file://$USER_HOME$/Desktop/Newfolder/core/src/test/java" />
+      <root url="file://$USER_HOME$/Desktop/Newfolder/demo/android/browser/src/main/java" />
+      <root url="file://$USER_HOME$/Desktop/Newfolder/demo/android/light/src/main/java" />
+      <root url="file://$USER_HOME$/Desktop/Newfolder/support/src/main/java" />
+      <root url="file://$USER_HOME$/Desktop/Newfolder/support/src/test/java" />
+    </SOURCES>
+  </library>
+</component>

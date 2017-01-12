@@ -4,6 +4,8 @@
     <root id="archive" name="upnp.jar">
       <element id="module-output" name="upnp" />
       <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/Newfolder/core/cling-core-2.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/Newfolder/support/cling-support-2.1.1.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
