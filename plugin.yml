@@ -1,4 +1,4 @@
-main: net.lostplay.upnp
+main: net.lostplay.upnp.main
 version: 1.0
 name: UpnpEnabler
 
