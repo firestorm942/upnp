@@ -1,20 +1,14 @@
 package net.lostplay.upnp;
 
-import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
 import java.util.logging.Logger;
-import org.bukkit.Server;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
-import org.fourthline.cling.controlpoint.ControlPoint;
-import org.fourthline.cling.registry.RegistryListener;
 import org.fourthline.cling.support.igd.PortMappingListener;
 import org.fourthline.cling.support.model.PortMapping;
-import org.fourthline.cling.support.model.PortMapping.Protocol;
 public class main
         extends JavaPlugin
 {

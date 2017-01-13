@@ -3,12 +3,11 @@
     <output-path>$PROJECT_DIR$/out/artifacts/AutoUpnp</output-path>
     <root id="archive" name="AutoUpnp.jar">
       <element id="module-output" name="upnp" />
-      <element id="extracted-dir" path="$USER_HOME$/Documents/APIs/server/spigot-api-1.11.2-R0.1-SNAPSHOT-shaded.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$USER_HOME$/Desktop/Newfolder/support/cling-support-2.1.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$USER_HOME$/Desktop/Newfolder/core/cling-core-2.1.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$USER_HOME$/Documents/APIs/server/server.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$USER_HOME$/Desktop/Newfolder/core/seamless-http-1.1.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$USER_HOME$/Desktop/Newfolder/core/seamless-util-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/cling-core-2.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/cling-support-2.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/seamless-http-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/seamless-util-1.1.1.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
     </root>
   </artifact>
 </component>
