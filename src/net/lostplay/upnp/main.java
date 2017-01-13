@@ -24,8 +24,8 @@ public class main
 
     public void onEnable()
     {
-        this.log.info("[AutoPortForward] AutoUpnp v1.0 by firestorm942 starting!");
-        this.log.info("[AutoPortForward] Attempting to forward port: " + getServer().getPort());
+        this.log.info("[AutoUpnp] AutoUpnp v1.0 by firestorm942 starting!");
+        this.log.info("[AutoUpnp] Attempting to forward port: " + getServer().getPort());
 
         forwardPort(getServer().getPort());
     }
@@ -39,19 +39,19 @@ public class main
         }
         catch (SocketException e)
         {
-            this.log.info("[AutoPortForward] Failed to forward port. :-( Stack trace: ");
+            this.log.info("[AutoUpnp] Failed to forward port. :-( Stack trace: ");
             e.printStackTrace();
             this.failed = true;
             disable();
         }
         PortMapping pm = new PortMapping(port, address, PortMapping.Protocol.TCP, "Minecraft");
-        this.upnp = new UpnpServiceImpl (new RegistryListener[] { new PortMappingListener(pm) {
+        this.upnp = new UpnpServiceImpl (new PortMappingListener(pm) {
             public void handleFailureMessage(String s) {
-                main.this.log.severe("[AutoPortForward] Failed to forward port. :-( Error message: " + s);
+                main.this.log.severe("[AutoUpnp] Failed to forward port. :-( Error message: " + s);
                 main.this.failed = true;
                 main.this.disable();
             }
-        } });
+        });
         this.upnp.getControlPoint().search();
     }
 
@@ -76,7 +76,7 @@ public class main
 
     public void onDisable()
     {
-        this.log.info("[AutoPortForward] Disabling..");
+        this.log.info("[AutoUpnp] Disabling..");
         if (!this.failed)
         {
             String address = null;
@@ -86,12 +86,12 @@ public class main
             }
             catch (SocketException e)
             {
-                this.log.info("[AutoPortForward] Failed to remove port mapping. :-( Stack trace: ");
+                this.log.info("[AutoUpnp] Failed to remove port mapping. :-( Stack trace: ");
                 e.printStackTrace();
                 this.failed = true;
                 disable();
             }
-            this.log.info("[AutoPortForward] Removing port mapping");
+            this.log.info("[AutoUpnp] Removing port mapping");
             this.upnp.shutdown();
         }
     }
