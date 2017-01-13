@@ -3,9 +3,11 @@ package net.lostplay.upnp;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
+import org.fourthline.cling.registry.RegistryListener;
 import org.fourthline.cling.support.igd.PortMappingListener;
 import org.fourthline.cling.support.model.PortMapping;
 
+import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
@@ -40,7 +42,7 @@ public class main
             disable();
         }
         PortMapping pm = new PortMapping(port, address, PortMapping.Protocol.TCP, "Minecraft");
-        this.upnp = new UpnpServiceImpl(new PortMappingListener(pm)
+        this.upnp = new UpnpServiceImpl(new RegistryListener[] { new PortMappingListener(pm)
         {
             public void handleFailureMessage(String s)
             {
@@ -48,7 +50,7 @@ public class main
                 main.this.failed = true;
                 main.this.disable();
             }
-        });
+        } });
         this.upnp.getControlPoint().search();
     }
 
@@ -58,9 +60,9 @@ public class main
         Enumeration<NetworkInterface> nics = NetworkInterface.getNetworkInterfaces();
         while (nics.hasMoreElements())
         {
-            NetworkInterface nic = nics.nextElement();
+            NetworkInterface nic = (NetworkInterface)nics.nextElement();
             if (!nic.isLoopback()) {
-                return (nic.getInetAddresses().nextElement()).getHostAddress();
+                return ((InetAddress)nic.getInetAddresses().nextElement()).getHostAddress();
             }
         }
         return null;
