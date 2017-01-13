@@ -1,3 +1,5 @@
 main: net.lostplay.upnp.main
 version: 1.0
 name: AutoUpnp
+author: firestorm942
+website: https://www.spigotmc.org/resources/autoupnp-1-11.34723/
