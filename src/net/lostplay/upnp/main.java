@@ -3,9 +3,6 @@ package net.lostplay.upnp;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.support.model.PortMapping;
-
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 public class main
         extends JavaPlugin
 {
@@ -20,11 +17,7 @@ public class main
         getConfig();
         getConfig().addDefault("settings.protocol", String.valueOf("TCP"));
         getConfig().addDefault("settings.name", String.valueOf("minecraft"));
-        try {
-            getConfig().addDefault("settings.ipaddress", InetAddress.getLocalHost().getHostAddress());
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
+        getConfig().addDefault("settings.ipaddress", String.valueOf("0.0.0.0"));
         getConfig().addDefault("settings.port", Integer.valueOf(25565));
         getConfig().options().copyDefaults(true);
         protocol = getConfig().getString("settings.protocol");
