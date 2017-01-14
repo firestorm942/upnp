@@ -34,6 +34,7 @@ public class main
         saveConfig();
         getLogger().info("[AutoUpnp] AutoUpnp v1.0 by firestorm942 starting!");
         getLogger().info("[AutoUpnp] Attempting to forward port: " + getServer().getPort());
+        upnpService.shutdown();
         openPort(ip, port, name, protocol);
     }
 
