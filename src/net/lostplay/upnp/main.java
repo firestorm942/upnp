@@ -46,7 +46,7 @@ public class main
         {
             public void handleFailureMessage(String s)
             {
-                main.this.log.severe("[AutoPortForward] Failed to forward port. :-( Error message: " + s);
+                main.this.log.severe("[AutoUpnp] Failed to forward port. :-( Error message: " + s);
                 main.this.failed = true;
                 main.this.disable();
             }
