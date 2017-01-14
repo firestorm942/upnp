@@ -6,7 +6,6 @@ import org.fourthline.cling.support.model.PortMapping;
 public class main
         extends JavaPlugin
 {
-    private static UpnpService upnpService = null;
     public void onEnable()
     {
         getLogger();
@@ -27,11 +26,10 @@ public class main
         saveConfig();
         getLogger().info("[AutoUpnp] AutoUpnp v1.0 by firestorm942 starting!");
         getLogger().info("[AutoUpnp] Attempting to forward port: " + getServer().getPort());
-        upnpService.shutdown();
         openPort(ip, port, name, protocol);
     }
 
-    private static void openPort(String ip, int port, String name, String protocol)
+    private void openPort(String ip, int port, String name, String protocol)
     {
         PortMapping mapping;
         UpnpService upnpService;
@@ -50,6 +48,6 @@ public class main
     public void onDisable()
     {
         getLogger().info("[AutoUpnp] Removing port mapping.");
-        upnpService.shutdown();
+        new UpnpService.Shutdown();
     }
 }
