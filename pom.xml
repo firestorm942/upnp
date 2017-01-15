@@ -36,14 +36,4 @@
         <version>2.0</version>
     </dependency>
     </dependencies>
-    <resources>
-        <resource>
-            <directory>${basedir}/main/java/resources</directory>
-            <includes>
-                <include>LICENSE</include>
-            </includes>
-        </resource>
-    </resources>
-
-
 </project>
