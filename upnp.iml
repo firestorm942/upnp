@@ -22,6 +22,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.persistence:persistence-api:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.17" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.10-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.fourthline.cling:cling-core:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.fourthline.cling:cling-core:2.1.2-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.fourthline.cling:support:2.1.1" level="project" />
   </component>
 </module>
