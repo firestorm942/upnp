@@ -9,8 +9,8 @@
     <version>2.0</version>
     <repositories>
         <repository>
-            <id>upnp-mvn-repo</id>
-            <url>https://github.com/firestorm942/upnp/mvn-repo/</url>
+            <id>cling-mvn-repo</id>
+            <url>https://github.com/4thline/cling/mvn-repo/</url>
         </repository>
         <repository>
             <id>spigot-repo</id>
@@ -26,14 +26,14 @@
         <scope>provided</scope>
     </dependency>
     <dependency>
-        <groupId>org.fourthline</groupId>
-        <artifactId>cling</artifactId>
-        <version>2.0</version>
+        <groupId>org.fourthline.cling</groupId>
+        <artifactId>cling-core</artifactId>
+        <version>2.1.2-SNAPSHOT</version>
     </dependency>
     <dependency>
         <groupId>org.fourthline.cling</groupId>
         <artifactId>support</artifactId>
-        <version>2.0</version>
+        <version>2.1.1</version>
     </dependency>
     </dependencies>
 </project>
