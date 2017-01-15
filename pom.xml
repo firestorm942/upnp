@@ -7,6 +7,54 @@
     <groupId>net.lostplay</groupId>
     <artifactId>upnp</artifactId>
     <version>2.0-SNAPSHOT</version>
+     <dependency>
+            <groupId>org.fourthline</groupId>
+            <artifactId>cling</artifactId>
+            <version>2.1.1</version>
+     </dependency>
+     <dependency>
+        <groupId>org.fourthline.cling</groupId>
+        <artifactId>support</artifactId>
+        <version>2.1.1</version>
+     </dependency>
+    <repositories>
+        <repository>
+            <id>upnp-mvn-repo</id>
+            <url>https://github.com/firestorm942/upnp/mvn-repo/</url>
+        </repository>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+
+    </repositories>
+    <dependencies>
+        <!--Spigot API-->
+    <dependency>
+        <groupId>org.spigotmc</groupId>
+        <artifactId>spigot-api</artifactId>
+        <version>1.11.2-R0.1-SNAPSHOT</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.fourthline</groupId>
+        <artifactId>cling</artifactId>
+        <version>2.0</version>
+    </dependency>
+    <dependency>
+        <groupId>org.fourthline.cling</groupId>
+        <artifactId>support</artifactId>
+        <version>2.0</version>
+    </dependency>
+    </dependencies>
+    <resources>
+        <resource>
+            <directory>${basedir}/main/java/resources</directory>
+            <includes>
+                <include>LICENSE</include>
+            </includes>
+        </resource>
+    </resources>
 
 
 </project>

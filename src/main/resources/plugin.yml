@@ -1,4 +1,4 @@
-main: net.lostplay.upnp.main
+main: Net.LostPlay.AutoUpnp.AutoUpnp
 version: 1.0
 name: AutoUpnp
 author: firestorm942
