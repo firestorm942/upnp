@@ -1,5 +1,0 @@
-settings:
-  protocol: TCP
-  name: minecraft
-  port: 25565
-  ipaddress: 0.0.0.0

@@ -9,6 +9,13 @@
     <version>2.0</version>
     <repositories>
         <repository>
+        <id>4thline-repo</id>
+        <url>http://4thline.org/m2</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        </repository>
+        <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
@@ -20,15 +27,14 @@
         <artifactId>spigot-api</artifactId>
         <version>1.11.2-R0.1-SNAPSHOT</version>
         <scope>provided</scope>
-    </dependency>
-    <dependency>
+    </dependency><dependency>
         <groupId>org.fourthline.cling</groupId>
         <artifactId>cling-core</artifactId>
-        <version>2.1.2-SNAPSHOT</version>
+        <version>2.1.1</version>
     </dependency>
     <dependency>
         <groupId>org.fourthline.cling</groupId>
-        <artifactId>support</artifactId>
+        <artifactId>cling-support</artifactId>
         <version>2.1.1</version>
     </dependency>
     </dependencies>
