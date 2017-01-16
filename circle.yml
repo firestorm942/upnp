@@ -1,5 +1,6 @@
 general:
-  post:
-      - mv target/*.jar $CIRCLE_ARTIFACTS/AutoUpnp.jar
   artifacts:
     - "target/*.jar" # a single file, relative to the build directory
+test:
+  post:
+      - mv target/*.jar $CIRCLE_ARTIFACTS/AutoUpnp.jar
