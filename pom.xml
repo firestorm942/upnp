@@ -40,11 +40,11 @@
     </dependency>
     </dependencies>
     <!-- Maven Assembly Plugin -->
+    <build>
 <plugins>
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.4.1</version>
         <configuration>
             <!-- get all project dependencies -->
             <descriptorRefs>
@@ -69,6 +69,6 @@
             </execution>
         </executions>
     </plugin>
-
 </plugins>
+</build>
 </project>
