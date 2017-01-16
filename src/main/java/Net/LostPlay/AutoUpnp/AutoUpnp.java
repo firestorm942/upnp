@@ -25,23 +25,23 @@ public class AutoUpnp
         ip = getConfig().getString("settings.ipaddress");
         port = getConfig().getInt("settings.port");
         saveConfig();
-        getLogger().info("[AutoUpnp] AutoUpnp v1.0 by firestorm942 starting!");
-        getLogger().info("[AutoUpnp] Attempting to forward port: " + getServer().getPort());
+        getLogger().info("[AutoUpnp] AutoUpnp v2.0 by firestorm942 starting!");
         openPort(ip, port, name, protocol);
     }
 
     private void openPort(String ip, int port, String name, String protocol)
     {
+        getLogger().info("[AutoUpnp] Attempting to forward port: " + getServer().getPort());
         PortMapping mapping;
         UpnpService upnpService;
-        if (protocol == "TCP") {
+        if (protocol.equals("TCP")) {
             mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
-        } else if (protocol == "UDP") {
+        } else if (protocol.equals("UDP")) {
             mapping = new PortMapping(port, ip, PortMapping.Protocol.UDP, name);
         } else {
             mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
         }
-        upnpService = new org.fourthline.cling.UpnpServiceImpl(new org.fourthline.cling.registry.RegistryListener[] { new org.fourthline.cling.support.igd.PortMappingListener(mapping) });
+        upnpService = new org.fourthline.cling.UpnpServiceImpl(new org.fourthline.cling.support.igd.PortMappingListener(mapping));
         upnpService.getControlPoint().search();
     }
 
