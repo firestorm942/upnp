@@ -1,8 +1,14 @@
 package Net.LostPlay.AutoUpnp;
 
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.fourthline.cling.UpnpService;
+import org.fourthline.cling.UpnpServiceImpl;
+import org.fourthline.cling.support.igd.PortMappingListener;
 import org.fourthline.cling.support.model.PortMapping;
+
+import static java.lang.String.*;
+import static org.fourthline.cling.support.model.PortMapping.Protocol.*;
 
 public class AutoUpnp
         extends JavaPlugin
@@ -14,34 +20,33 @@ public class AutoUpnp
         String name;
         String ip;
         int port;
-        getConfig();
-        getConfig().addDefault("settings.protocol", String.valueOf("TCP"));
-        getConfig().addDefault("settings.name", String.valueOf("minecraft"));
-        getConfig().addDefault("settings.ipaddress", String.valueOf("0.0.0.0"));
-        getConfig().addDefault("settings.port", Integer.valueOf(25565));
-        getConfig().options().copyDefaults(true);
-        protocol = getConfig().getString("settings.protocol");
-        name = getConfig().getString("settings.name");
-        ip = getConfig().getString("settings.ipaddress");
-        port = getConfig().getInt("settings.port");
+        FileConfiguration config = getConfig();
+        config.addDefault("settings.protocol", valueOf("TCP"));
+        config.addDefault("settings.name", valueOf("minecraft"));
+        config.addDefault("settings.ipaddress", valueOf("0.0.0.0"));
+        config.addDefault("settings.port", 25565);
+        config.options().copyDefaults(true);
+        protocol = config.getString("settings.protocol");
+        name = config.getString("settings.name");
+        ip = config.getString("settings.ipaddress");
+        port = config.getInt("settings.port");
         saveConfig();
-        getLogger().info("[AutoUpnp] AutoUpnp v2.0 by firestorm942 starting!");
         openPort(ip, port, name, protocol);
     }
 
     private void openPort(String ip, int port, String name, String protocol)
     {
-        getLogger().info("[AutoUpnp] Attempting to forward port: " + getServer().getPort());
+        getLogger().info(format("[AutoUpnp] Attempting to forward port: %d", getServer().getPort()));
         PortMapping mapping;
         UpnpService upnpService;
         if (protocol.equals("TCP")) {
-            mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
+            mapping = new PortMapping(port, ip, TCP, name);
         } else if (protocol.equals("UDP")) {
-            mapping = new PortMapping(port, ip, PortMapping.Protocol.UDP, name);
+            mapping = new PortMapping(port, ip, UDP, name);
         } else {
-            mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
+            mapping = new PortMapping(port, ip, TCP, name);
         }
-        upnpService = new org.fourthline.cling.UpnpServiceImpl(new org.fourthline.cling.support.igd.PortMappingListener(mapping));
+        upnpService = new UpnpServiceImpl(new PortMappingListener(mapping));
         upnpService.getControlPoint().search();
     }
 
