@@ -6,7 +6,7 @@
 
     <groupId>Net.LostPlay</groupId>
     <artifactId>AutoUpnp</artifactId>
-    <version>2.0.1</version>
+    <version>3.0</version>
     <repositories>
         <repository>
         <id>4thline-repo</id>
@@ -50,13 +50,12 @@
             <descriptorRefs>
                 <descriptorRef>jar-with-dependencies</descriptorRef>
             </descriptorRefs>
-            <!-- MainClass in mainfest make a executable jar -->
+            <!-- MainClass in manifest make a executable jar -->
             <archive>
                 <manifest>
                     <mainClass>Net.LostPlay.AutoUpnp.AutoUpnp</mainClass>
                 </manifest>
             </archive>
-
         </configuration>
         <executions>
             <execution>
