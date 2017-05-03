@@ -7,7 +7,6 @@ import org.fourthline.cling.UpnpServiceImpl;
 import org.fourthline.cling.support.igd.PortMappingListener;
 import org.fourthline.cling.support.model.PortMapping;
 import static java.lang.String.*;
-import static org.fourthline.cling.support.model.PortMapping.Protocol.*;
 
 public class AutoUpnp
         extends JavaPlugin
@@ -39,11 +38,11 @@ public class AutoUpnp
         PortMapping mapping;
         UpnpService upnpService;
         if (protocol.equals("TCP")) {
-            mapping = new PortMapping(port, ip, TCP, name);
+            mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
         } else if (protocol.equals("UDP")) {
-            mapping = new PortMapping(port, ip, UDP, name);
+            mapping = new PortMapping(port, ip, PortMapping.Protocol.UDP, name);
         } else {
-            mapping = new PortMapping(port, ip, TCP, name);
+            mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
         }
         upnpService = new UpnpServiceImpl(new PortMappingListener(mapping));
         upnpService.getControlPoint().search();
