@@ -37,12 +37,16 @@ public class AutoUpnp
         getLogger().info(format("[AutoUpnp] Attempting to forward port: %d", getServer().getPort()));
         PortMapping mapping;
         UpnpService upnpService;
-        if (protocol.equals("TCP")) {
-            mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
-        } else if (protocol.equals("UDP")) {
-            mapping = new PortMapping(port, ip, PortMapping.Protocol.UDP, name);
-        } else {
-            mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
+        switch (protocol) {
+            case "TCP":
+                mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
+                break;
+            case "UDP":
+                mapping = new PortMapping(port, ip, PortMapping.Protocol.UDP, name);
+                break;
+            default:
+                mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
+                break;
         }
         upnpService = new UpnpServiceImpl(new PortMappingListener(mapping));
         upnpService.getControlPoint().search();
