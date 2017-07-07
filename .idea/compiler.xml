@@ -9,8 +9,8 @@
         <module name="upnp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.5">
-      <module name="upnp" target="1.7" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="upnp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
