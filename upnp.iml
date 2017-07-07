@@ -19,11 +19,11 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.code.gson:gson:2.8.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.18" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.12-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.fourthline.cling:cling-core:2.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.fourthline.cling:cling-core:2.1.2-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.seamless:seamless-util:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.seamless:seamless-http:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.seamless:seamless-xml:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.fourthline.cling:cling-support:2.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.fourthline.cling:cling-support:2.1.2-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.seamless:seamless-swing:1.1.1" level="project" />
   </component>
 </module>

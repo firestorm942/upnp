@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.fourthline.cling:cling-core:2.1.2-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/fourthline/cling/cling-core/2.1.2-SNAPSHOT/cling-core-2.1.2-20160706.111124-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/fourthline/cling/cling-core/2.1.2-SNAPSHOT/cling-core-2.1.2-20160706.111124-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/fourthline/cling/cling-core/2.1.2-SNAPSHOT/cling-core-2.1.2-20160706.111124-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
