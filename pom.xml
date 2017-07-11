@@ -6,7 +6,11 @@
 
     <groupId>Net.LostPlay</groupId>
     <artifactId>AutoUpnp</artifactId>
+    <packaging>pom</packaging>
     <version>3.1.1</version>
+    <modules>
+        <module>AutoUpnpBungee</module>
+    </modules>
     <repositories>
         <repository>
         <id>4thline-repo</id>
