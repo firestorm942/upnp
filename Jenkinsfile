@@ -14,7 +14,7 @@ mv AutoUpnpBungee/target/AutoUpnpBungee*jar*.jar AutoUpnpBungee.jar'''
     }
     stage('Artifact') {
       steps {
-        archiveArtifacts 'AutoUpnp.jar AutoUpnpBungee.jar'
+        archiveArtifacts 'AutoUpnp.jar,AutoUpnpBungee.jar'
       }
     }
   }
