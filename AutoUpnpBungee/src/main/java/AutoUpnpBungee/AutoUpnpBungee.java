@@ -1,42 +1,39 @@
-package Net.LostPlay.AutoUpnpBungee;
+package AutoUpnpBungee;
 
-import net.md_5.bungee.api.plugin.Plugin;
-import net.md_5.bungee.config.Configuration;
-import net.md_5.bungee.config.ConfigurationProvider;
-import net.md_5.bungee.config.YamlConfiguration;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.fourthline.cling.UpnpService;
 import org.fourthline.cling.UpnpServiceImpl;
 import org.fourthline.cling.support.igd.PortMappingListener;
 import org.fourthline.cling.support.model.PortMapping;
-
-import java.io.File;
-import java.io.IOException;
+import static java.lang.String.*;
 
 public class AutoUpnpBungee
-        extends Plugin
+        extends JavaPlugin
 {
     public void onEnable()
     {
-        getLogger();
         String protocol;
         String name;
         String ip;
         int port;
-        Configuration config = null;
-        try {
-            config = ConfigurationProvider.getProvider(YamlConfiguration.class).load(new File(getDataFolder(), "config.yml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        FileConfiguration config = getConfig();
+        config.addDefault("settings.protocol", valueOf("TCP"));
+        config.addDefault("settings.name", valueOf("minecraft"));
+        config.addDefault("settings.ipaddress", valueOf("0.0.0.0"));
+        config.addDefault("settings.port", 25565);
+        config.options().copyDefaults(true);
         protocol = config.getString("settings.protocol");
         name = config.getString("settings.name");
         ip = config.getString("settings.ipaddress");
         port = config.getInt("settings.port");
+        saveConfig();
         openPort(ip, port, name, protocol);
     }
 
     private void openPort(String ip, int port, String name, String protocol)
     {
+        getLogger().info(format("[AutoUpnp] Attempting to forward port: %d", getServer().getPort()));
         PortMapping mapping;
         UpnpService upnpService;
         if (protocol.equals("TCP")) {
