@@ -6,7 +6,7 @@
 
     <groupId>Net.LostPlay</groupId>
     <artifactId>AutoUpnp</artifactId>
-    <version>3.1.1</version>
+    <version>3.1.2</version>
     <repositories>
         <repository>
         <id>4thline-repo</id>
