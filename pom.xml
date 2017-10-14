@@ -50,7 +50,10 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
-            <!-- MainClass in manifest make a executable jar -->
+            <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+            <finalName>AutoUpnp-spigot</finalName>
             <archive>
                 <manifest>
                     <mainClass>Net.LostPlay.AutoUpnp.AutoUpnp</mainClass>
