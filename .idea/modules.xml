@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AutoUpnpBungee/AutoUpnpBungee.iml" filepath="$PROJECT_DIR$/AutoUpnpBungee/AutoUpnpBungee.iml" />
       <module fileurl="file://$PROJECT_DIR$/upnp.iml" filepath="$PROJECT_DIR$/upnp.iml" />
     </modules>
   </component>
