@@ -13,6 +13,7 @@ public class autoupnp
 {
     public void onEnable()
     {
+        //ignore
         getLogger();
         String protocol;
         String name;
