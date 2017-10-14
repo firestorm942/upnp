@@ -1,4 +1,4 @@
-package Net.LostPlay.AutoUpnp;
+package net.lostplay.autoupnp;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -8,7 +8,7 @@ import org.fourthline.cling.support.igd.PortMappingListener;
 import org.fourthline.cling.support.model.PortMapping;
 import static java.lang.String.*;
 
-public class AutoUpnp
+public class autoupnp
         extends JavaPlugin
 {
     public void onEnable()
@@ -34,7 +34,7 @@ public class AutoUpnp
 
     private void openPort(String ip, int port, String name, String protocol)
     {
-        getLogger().info(format("[AutoUpnp] Attempting to forward port: %d", getServer().getPort()));
+        getLogger().info(format("[autoupnp] Attempting to forward port: %d", getServer().getPort()));
         PortMapping mapping;
         UpnpService upnpService;
         if (protocol.equals("TCP")) {
@@ -54,7 +54,7 @@ public class AutoUpnp
 
     public void onDisable()
     {
-        getLogger().info("[AutoUpnp] Removing port mapping.");
+        getLogger().info("[autoupnp] Removing port mapping.");
         new UpnpService.Shutdown();
     }
 }
