@@ -55,7 +55,7 @@
             <finalName>AutoUpnp-spigot</finalName>
             <archive>
                 <manifest>
-                    <mainClass>net.lostplay.autoupnp.autoupnp</mainClass>
+                    <mainClass>net.lostplay.autoupnp.Main</mainClass>
                 </manifest>
             </archive>
         </configuration>

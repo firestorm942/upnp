@@ -8,7 +8,7 @@ import org.fourthline.cling.support.igd.PortMappingListener;
 import org.fourthline.cling.support.model.PortMapping;
 import static java.lang.String.*;
 
-public class autoupnp
+public class Main
         extends JavaPlugin
 {
     public void onEnable()
