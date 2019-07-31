@@ -30,6 +30,7 @@ public class Main
         ip = config.getString("settings.ipaddress");
         port = config.getInt("settings.port");
         saveConfig();
+        assert protocol != null;
         openPort(ip, port, name, protocol);
     }
 
