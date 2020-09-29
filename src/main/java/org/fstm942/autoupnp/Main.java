@@ -1,4 +1,4 @@
-package net.lostplay.autoupnp;
+package org.fstm942.autoupnp;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,9 +20,9 @@ public class Main
         String ip;
         int port;
         FileConfiguration config = getConfig();
-        config.addDefault("settings.protocol", valueOf("TCP"));
-        config.addDefault("settings.name", valueOf("minecraft"));
-        config.addDefault("settings.ipaddress", valueOf("0.0.0.0"));
+        config.addDefault("settings.protocol", "TCP");
+        config.addDefault("settings.name", "minecraft");
+        config.addDefault("settings.ipaddress", "0.0.0.0");
         config.addDefault("settings.port", 25565);
         config.options().copyDefaults(true);
         protocol = config.getString("settings.protocol");

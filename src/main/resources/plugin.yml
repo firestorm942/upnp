@@ -1,5 +1,5 @@
-main: net.lostplay.autoupnp.autoupnp
-version: 3.1.2
-name: autoupnp
+main: org.fstm942.autoupnp.Main
+version: 3.1.3
+name: AutoUpnp
 author: firestorm942
 website: https://www.spigotmc.org/resources/autoupnp-1-7-1-12.34723/
