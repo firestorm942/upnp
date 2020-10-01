@@ -60,7 +60,8 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <finalName>AutoUpnp-spigot</finalName>
+                    <finalName>AutoUpnp-Spigot</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
                             <mainClass>org.fstm942.autoupnp.Main</mainClass>
