@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="upnp" />
+        <module name="AutoUpnp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="AutoUpnp" target="1.5" />
       <module name="AutoUpnpBungee" target="1.7" />
-      <module name="upnp" target="1.8" />
+      <module name="upnp" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
