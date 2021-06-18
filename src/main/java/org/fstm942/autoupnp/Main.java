@@ -2,10 +2,11 @@ package org.fstm942.autoupnp;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.fourthline.cling.UpnpService;
-import org.fourthline.cling.UpnpServiceImpl;
-import org.fourthline.cling.support.igd.PortMappingListener;
-import org.fourthline.cling.support.model.PortMapping;
+import org.jupnp.UpnpService;
+import org.jupnp.UpnpServiceConfiguration;
+import org.jupnp.UpnpServiceImpl;
+import org.jupnp.support.igd.PortMappingListener;
+import org.jupnp.support.model.PortMapping;
 import static java.lang.String.*;
 
 public class Main
@@ -49,7 +50,7 @@ public class Main
             mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
 
         }
-        upnpService = new UpnpServiceImpl(new PortMappingListener(mapping));
+        upnpService = new UpnpServiceImpl((UpnpServiceConfiguration) new PortMappingListener(mapping));
         upnpService.getControlPoint().search();
     }
 
