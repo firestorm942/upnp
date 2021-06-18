@@ -1,6 +1,5 @@
 package org.fstm942.autoupnp;
 
-import org.bstats.bukkit.Metrics;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.fourthline.cling.UpnpService;
@@ -33,8 +32,6 @@ public class Main
         saveConfig();
         assert protocol != null;
         openPort(ip, port, name, protocol);
-        int pluginId = 9010; // <-- Replace with the id of your plugin!
-        Metrics metrics = new Metrics(this, pluginId);
     }
 
     private void openPort(String ip, int port, String name, String protocol)

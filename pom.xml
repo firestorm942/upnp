@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.fstm942</groupId>
     <artifactId>AutoUpnp</artifactId>
-    <version>3.2.1</version>
+    <version>3.3-SNAPSHOT</version>
     <repositories>
         <repository>
             <id>4thline-repo</id>
@@ -29,20 +29,14 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>1.7</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>org.fourthline.cling</groupId>
             <artifactId>cling-core</artifactId>
-            <version>2.1.2-SNAPSHOT</version>
+            <version>2.1.2</version>
         </dependency>
         <dependency>
             <groupId>org.fourthline.cling</groupId>
             <artifactId>cling-support</artifactId>
-            <version>2.1.2-SNAPSHOT</version>
+            <version>2.1.2</version>
         </dependency>
     </dependencies>
     <!-- Maven Assembly Plugin -->
@@ -77,26 +71,12 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.0</version>
-                <!-- Do not include the <configuration>...</configuration> part if you are using Sponge! -->
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
-                    <relocations>
-                        <relocation>
-                            <pattern>org.bstats</pattern>
-                            <!-- Replace this with your package! -->
-                            <shadedPattern>org.fstm942.autoupnp</shadedPattern>
-                        </relocation>
-                    </relocations>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
         <resources>
