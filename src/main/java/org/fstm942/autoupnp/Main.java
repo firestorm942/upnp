@@ -10,10 +10,9 @@ import org.jupnp.support.model.PortMapping;
 import static java.lang.String.*;
 
 public class Main
-        extends JavaPlugin
-{
-    public void onEnable()
-    {
+        extends JavaPlugin {
+
+    public void onEnable() {
         getLogger();
         String protocol;
         String name;
@@ -33,8 +32,7 @@ public class Main
         assert protocol != null;
         openPort(ip, port, name, protocol);
     }
-    public void openPort(String ip, int port, String name, String protocol)
-    {
+    private void openPort(String ip, int port, String name, String protocol) {
         getLogger().info(format("[autoupnp] Attempting to forward port: %d", getServer().getPort()));
         PortMapping mapping;
         UpnpService upnpService;
@@ -48,14 +46,14 @@ public class Main
             mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
 
         }
-        // upnpService = new UpnpServiceImpl((UpnpServiceConfiguration) new PortMappingListener(mapping));
+        //upnpService = new UpnpServiceImpl((UpnpServiceConfiguration) new PortMappingListener(mapping));
         upnpService = new UpnpServiceImpl((UpnpServiceConfiguration) new PortMappingListener(mapping));
+
         upnpService.getControlPoint().search();
     }
 
 
-    public void onDisable()
-    {
+    public void onDisable() {
         getLogger().info("[autoupnp] Removing port mapping.");
         new UpnpService.Shutdown();
     }
