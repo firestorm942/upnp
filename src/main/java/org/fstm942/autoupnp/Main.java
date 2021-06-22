@@ -14,7 +14,6 @@ public class Main
 {
     public void onEnable()
     {
-        //ignore
         getLogger();
         String protocol;
         String name;
@@ -34,8 +33,7 @@ public class Main
         assert protocol != null;
         openPort(ip, port, name, protocol);
     }
-
-    private void openPort(String ip, int port, String name, String protocol)
+    public void openPort(String ip, int port, String name, String protocol)
     {
         getLogger().info(format("[autoupnp] Attempting to forward port: %d", getServer().getPort()));
         PortMapping mapping;
@@ -50,6 +48,7 @@ public class Main
             mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
 
         }
+        // upnpService = new UpnpServiceImpl((UpnpServiceConfiguration) new PortMappingListener(mapping));
         upnpService = new UpnpServiceImpl((UpnpServiceConfiguration) new PortMappingListener(mapping));
         upnpService.getControlPoint().search();
     }
