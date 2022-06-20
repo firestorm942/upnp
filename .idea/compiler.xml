@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17">
-      <module name="AutoUpnp" target="1.17" />
+      <module name="AutoUpnp" target="1.18.2" />
     </bytecodeTargetLevel>
   </component>
 </project>
