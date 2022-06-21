@@ -1,12 +1,17 @@
-package org.fstm942.autoupnp;
+package xyz.fstm.autoupnp;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 import org.jupnp.UpnpService;
 import org.jupnp.UpnpServiceConfiguration;
 import org.jupnp.UpnpServiceImpl;
 import org.jupnp.support.igd.PortMappingListener;
 import org.jupnp.support.model.PortMapping;
+
+import javax.annotation.Nullable;
+
 import static java.lang.String.*;
 
 public class Main
@@ -33,28 +38,20 @@ public class Main
         openPort(ip, port, name, protocol);
     }
     private void openPort(String ip, int port, String name, String protocol) {
-        getLogger().info(format("[autoupnp] Attempting to forward port: %d", getServer().getPort()));
+        getLogger().info(format("Attempting to forward port: %d", getServer().getPort()));
         PortMapping mapping;
-        UpnpService upnpService;
-        if (protocol.equals("TCP")) {
-            mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
+        UpnpService upnpport;
+        mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
 
-        } else if (protocol.equals("UDP")) {
-            mapping = new PortMapping(port, ip, PortMapping.Protocol.UDP, name);
-
-        } else {
-            mapping = new PortMapping(port, ip, PortMapping.Protocol.TCP, name);
-
-        }
         //upnpService = new UpnpServiceImpl((UpnpServiceConfiguration) new PortMappingListener(mapping));
-        upnpService = new UpnpServiceImpl((UpnpServiceConfiguration) new PortMappingListener(mapping));
+        upnpport = new UpnpServiceImpl((UpnpServiceConfiguration) new PortMappingListener(mapping));
 
-        upnpService.getControlPoint().search();
+        upnpport.getControlPoint().search();
     }
 
 
     public void onDisable() {
-        getLogger().info("[autoupnp] Removing port mapping.");
+        getLogger().info("Removing port mapping.");
         new UpnpService.Shutdown();
     }
 }

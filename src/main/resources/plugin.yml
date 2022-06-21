@@ -1,4 +1,4 @@
-main: org.fstm942.autoupnp.Main
+main: xyz.fstm.autoupnp.Main
 version: ${project.version}
 name: AutoUpnp
 author: firestorm942
